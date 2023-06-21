@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tweet',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tweet.component.css']
 })
 export class TweetComponent implements OnInit {
+	@Input() tweetMessage:string = '';
 
   constructor() { }
 

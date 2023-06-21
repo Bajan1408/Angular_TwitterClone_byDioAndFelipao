@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessagesService } from 'src/app/services/messages.service';
 
 @Component({
   selector: 'app-post',
@@ -10,15 +11,17 @@ export class PostComponent implements OnInit {
 	tweetMaxLength:number = 240;
 	tweetRemain:number = this.tweetMaxLength;
 
+	constructor(private service:MessagesService) {}
+
 	changeTweet() {
 		this.tweetRemain = this.tweetMaxLength - this.tweetMessage.length;
 	}
 
 	sendTweet() {
-		alert(this.tweetMessage);
+		this.service.addMessage(this.tweetMessage);
+		this.tweetMessage = '';
+		this.tweetRemain = this.tweetMaxLength;
 	}
-
-  constructor() { }
 
   ngOnInit(): void {
   }
