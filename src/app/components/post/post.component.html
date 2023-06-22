@@ -7,7 +7,7 @@
 		<div class="flex-1">
 			<!-- textarea -->
 			<textarea
-			(keydown.enter)="sendTweet()"
+			(keyup.enter)="sendTweet()"
 			[(ngModel)]="tweetMessage"
 			(input)="changeTweet()"
 			[maxlength]="tweetMaxLength"

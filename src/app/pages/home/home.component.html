@@ -1,18 +1,26 @@
-<header class="mb-10 w-full">
-	<app-header></app-header>
-</header>
+<body class="container flex flex-col min-h-screen bg-blue-50">
+	<header class="mb-10 w-full">
+		<app-header></app-header>
+	</header>
+  <main class="flex flex-col flex-1 min-h-70 mt-0">
+	  <div class="flex items-center justify-center container mx-auto">
+		  <app-post></app-post>
+	  </div>
 
-<div class="flex items-center justify-center container mx-auto">
-	<app-post></app-post>
-</div>
+	  <div class="flex flex-col items-center justify-center container mx-auto"
+		  *ngFor="let tweet of tweets"
+	  >
+		  <app-tweet [tweetMessage]="tweet" class="flex-1"></app-tweet>
+	  </div>
+  </main>
 
-<div class="flex flex-col items-center justify-center container mx-auto"
-*ngFor="let tweet of tweets"
->
-<app-tweet [tweetMessage]="tweet"></app-tweet>
-</div>
+	<footer class="relative max-h-20 flex flex-col items-center">
+		<app-footer class="top-10"></app-footer>
+	</footer>
 
-<footer class="bottom-0 m-auto w-full">
-	<app-footer></app-footer>
-</footer>
+</body>
+
+
+
+
 
